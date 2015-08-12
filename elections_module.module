@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the elections_module feature.
+ */
+
+include_once 'elections_module.features.inc';
