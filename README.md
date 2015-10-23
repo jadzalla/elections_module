@@ -34,22 +34,22 @@ The preferred platform for easy distribution is Ubuntu Server 14.04 LTS.  This v
 
 5.Once the repo has been cloned, change into the directory of the repo and build the docker image using:
 
+    cd apollo
     docker build -t apollo .
 
 6.Pull the docker images for mongodb and redis with the following command:
 
-    docker pull dockerfile/mongodb
+    docker pull library/mongo
 
-    docker pull dockerfile/redis
+    docker pull library/redis
 
 7.Create and run containers for redis and mongodb
 
-    docker run -d --name database dockerfile/mongodb
-
-    docker run -d --name jobqueue dockerfile/redis
+    docker run -d --name database library/mongo
+    docker run -d --name jobqueue library/redis
 
 8.Next, we’ll want to create an environment configuration file for the Elections instance.  You can use the template at http://git.io/TAc4jg as a starting point and then edit as desired:
-
+   
     wget -O ~/.env http://git.io/TAc4jg
 
 9.We’re now ready to launch the Elections instance by linking the mongodb and redis containers we created earlier to it.  The following command will do that:
@@ -58,12 +58,9 @@ The preferred platform for easy distribution is Ubuntu Server 14.04 LTS.  This v
 
 10.Setup nginx using this template as a starting point -     :
 
-    wget -O /etc/nginx/sites-available/apollo http://git.io/6mRRMA
-
+    wget -O /etc/nginx/sites-available/elections http://git.io/6mRRMA
     rm /etc/nginx/sites-enabled/default
-
-    ln -s /etc/nginx/sites-available/elections /etc/nginx/sites-enable/elections
-
+    ln -s /etc/nginx/sites-available/elections /etc/nginx/sites-enabled/elections
     service nginx restart
 
 The following steps require that you start a container that (rather than spawn a running instance of the app) spawns a shell that you can use in interacting with the application’s backend via management commands
@@ -190,14 +187,14 @@ The template might require some customization including things like the port (ho
 
     sudo ln -s /etc/nginx/sites-available/apollo /etc/nginx/sites-enabled/apollo
 
-sudo service nginx restart
+    sudo service nginx restart
 
-    Please note that you also have to configure SSL (which is beyond the scope of this document).
+Please note that you also have to configure SSL (which is beyond the scope of this document).
 
 13.Create Deployment
 Choose a name for the deployment (e.g. demo) and then also specify the hostname. The hostname must match the hostname of the server (e.g. www.apollo.la). This is a crucial step as Apollo is able to find related data only based on lookups of the hostname. If you have two deployments on the same server (same IP address) only the hostname will be used to distinguish between them.
 
-    ./manage.py create_deployment
+  ./manage.py create_deployment
 
 14.Create Event
 Choose the deployment you want to create the event in, the name you want to call the event and the start and end dates for the event.
