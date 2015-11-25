@@ -84,6 +84,12 @@ function elections_module_views_default_views() {
     'general' => array(
       'allow_secondary' => 0,
       'secondary_label' => 'Advanced options',
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
     ),
     'field_topic_tid' => array(
       'bef_format' => 'bef_ul',
@@ -97,12 +103,44 @@ function elections_module_views_default_views() {
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
           ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
         ),
         'rewrite' => array(
           'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
         ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'filter_rewrite_values' => NULL,
       ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
     ),
     'field_type_tid' => array(
       'bef_format' => 'default',
@@ -115,13 +153,52 @@ function elections_module_views_default_views() {
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
           ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
         ),
         'rewrite' => array(
           'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
         ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'filter_rewrite_values' => NULL,
       ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
     ),
+    'secondary_label' => NULL,
+    'collapsible_label' => NULL,
+    'combine_rewrite' => NULL,
+    'reset_label' => NULL,
+    'bef_filter_description' => NULL,
+    'any_label' => NULL,
+    'filter_rewrite_values' => NULL,
   );
   $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
   $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'html';
@@ -197,12 +274,19 @@ function elections_module_views_default_views() {
   );
   $handler->display->display_options['filters']['field_type_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_type_tid']['vocabulary'] = 'data_type';
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
   $handler->display->display_options['path'] = 'all-questions';
 
-  /* Display: Observations: Candidate Agents */
-  $handler = $view->new_display('block', 'Observations: Candidate Agents', 'block_1');
+  /* Display: Topic 1 */
+  $handler = $view->new_display('block', 'Topic 1', 'block_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Candidate Agents and Observers';
+  $handler->display->display_options['title'] = 'Topic 1';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -224,16 +308,23 @@ function elections_module_views_default_views() {
   $handler->display->display_options['filters']['field_topic_tid']['table'] = 'field_data_field_topic';
   $handler->display->display_options['filters']['field_topic_tid']['field'] = 'field_topic_tid';
   $handler->display->display_options['filters']['field_topic_tid']['value'] = array(
-    18 => '18',
+    10 => '10',
   );
   $handler->display->display_options['filters']['field_topic_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_topic_tid']['vocabulary'] = 'topic';
   $handler->display->display_options['filters']['field_topic_tid']['hierarchy'] = 1;
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
 
-  /* Display: Observations: Gender */
-  $handler = $view->new_display('block', 'Observations: Gender', 'block_2');
+  /* Display: Topic 2 */
+  $handler = $view->new_display('block', 'Topic 2', 'block_2');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Gender and Accessibility';
+  $handler->display->display_options['title'] = 'Topic 2';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -255,16 +346,23 @@ function elections_module_views_default_views() {
   $handler->display->display_options['filters']['field_topic_tid']['table'] = 'field_data_field_topic';
   $handler->display->display_options['filters']['field_topic_tid']['field'] = 'field_topic_tid';
   $handler->display->display_options['filters']['field_topic_tid']['value'] = array(
-    19 => '19',
+    11 => '11',
   );
   $handler->display->display_options['filters']['field_topic_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_topic_tid']['vocabulary'] = 'topic';
   $handler->display->display_options['filters']['field_topic_tid']['hierarchy'] = 1;
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
 
-  /* Display: Observations: Environment */
-  $handler = $view->new_display('block', 'Observations: Environment', 'block_3');
+  /* Display: Topic 3 */
+  $handler = $view->new_display('block', 'Topic 3', 'block_3');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'General Environment';
+  $handler->display->display_options['title'] = 'Topic 3';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -286,203 +384,18 @@ function elections_module_views_default_views() {
   $handler->display->display_options['filters']['field_topic_tid']['table'] = 'field_data_field_topic';
   $handler->display->display_options['filters']['field_topic_tid']['field'] = 'field_topic_tid';
   $handler->display->display_options['filters']['field_topic_tid']['value'] = array(
-    17 => '17',
+    12 => '12',
   );
   $handler->display->display_options['filters']['field_topic_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_topic_tid']['vocabulary'] = 'topic';
   $handler->display->display_options['filters']['field_topic_tid']['hierarchy'] = 1;
-
-  /* Display: Observations: IOM */
-  $handler = $view->new_display('block', 'Observations: IOM', 'block_4');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'IOM Information';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'question' => 'question',
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
-  /* Filter criterion: Content: Topic (field_topic) */
-  $handler->display->display_options['filters']['field_topic_tid']['id'] = 'field_topic_tid';
-  $handler->display->display_options['filters']['field_topic_tid']['table'] = 'field_data_field_topic';
-  $handler->display->display_options['filters']['field_topic_tid']['field'] = 'field_topic_tid';
-  $handler->display->display_options['filters']['field_topic_tid']['value'] = array(
-    20 => '20',
-  );
-  $handler->display->display_options['filters']['field_topic_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_topic_tid']['vocabulary'] = 'topic';
-  $handler->display->display_options['filters']['field_topic_tid']['hierarchy'] = 1;
-
-  /* Display: Observations: Opening */
-  $handler = $view->new_display('block', 'Observations: Opening', 'block_5');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Opening Information';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'question' => 'question',
-  );
-  /* Filter criterion: Content: Topic (field_topic) */
-  $handler->display->display_options['filters']['field_topic_tid']['id'] = 'field_topic_tid';
-  $handler->display->display_options['filters']['field_topic_tid']['table'] = 'field_data_field_topic';
-  $handler->display->display_options['filters']['field_topic_tid']['field'] = 'field_topic_tid';
-  $handler->display->display_options['filters']['field_topic_tid']['value'] = array(
-    16 => '16',
-  );
-  $handler->display->display_options['filters']['field_topic_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_topic_tid']['vocabulary'] = 'topic';
-  $handler->display->display_options['filters']['field_topic_tid']['hierarchy'] = 1;
-
-  /* Display: Voting: Accredidation Process */
-  $handler = $view->new_display('block', 'Voting: Accredidation Process', 'block_6');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Accreditation Process';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'question' => 'question',
-  );
-  /* Filter criterion: Content: Topic (field_topic) */
-  $handler->display->display_options['filters']['field_topic_tid']['id'] = 'field_topic_tid';
-  $handler->display->display_options['filters']['field_topic_tid']['table'] = 'field_data_field_topic';
-  $handler->display->display_options['filters']['field_topic_tid']['field'] = 'field_topic_tid';
-  $handler->display->display_options['filters']['field_topic_tid']['value'] = array(
-    22 => '22',
-  );
-  $handler->display->display_options['filters']['field_topic_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_topic_tid']['vocabulary'] = 'topic';
-  $handler->display->display_options['filters']['field_topic_tid']['hierarchy'] = 1;
-
-  /* Display: Voting: Voting Process */
-  $handler = $view->new_display('block', 'Voting: Voting Process', 'block_7');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Voting Process';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'question' => 'question',
-  );
-  /* Filter criterion: Content: Topic (field_topic) */
-  $handler->display->display_options['filters']['field_topic_tid']['id'] = 'field_topic_tid';
-  $handler->display->display_options['filters']['field_topic_tid']['table'] = 'field_data_field_topic';
-  $handler->display->display_options['filters']['field_topic_tid']['field'] = 'field_topic_tid';
-  $handler->display->display_options['filters']['field_topic_tid']['value'] = array(
-    21 => '21',
-  );
-  $handler->display->display_options['filters']['field_topic_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_topic_tid']['vocabulary'] = 'topic';
-  $handler->display->display_options['filters']['field_topic_tid']['hierarchy'] = 1;
-
-  /* Display: Closing: Process */
-  $handler = $view->new_display('block', 'Closing: Process', 'block_8');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Process';
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['pager']['options']['quantity'] = '9';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'question' => 'question',
-  );
-  /* Filter criterion: Content: Topic (field_topic) */
-  $handler->display->display_options['filters']['field_topic_tid']['id'] = 'field_topic_tid';
-  $handler->display->display_options['filters']['field_topic_tid']['table'] = 'field_data_field_topic';
-  $handler->display->display_options['filters']['field_topic_tid']['field'] = 'field_topic_tid';
-  $handler->display->display_options['filters']['field_topic_tid']['value'] = array(
-    23 => '23',
-  );
-  $handler->display->display_options['filters']['field_topic_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_topic_tid']['vocabulary'] = 'topic';
-  $handler->display->display_options['filters']['field_topic_tid']['hierarchy'] = 1;
-
-  /* Display: Closing: Results */
-  $handler = $view->new_display('block', 'Closing: Results', 'block_9');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Results';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'question' => 'question',
-  );
-  /* Filter criterion: Content: Topic (field_topic) */
-  $handler->display->display_options['filters']['field_topic_tid']['id'] = 'field_topic_tid';
-  $handler->display->display_options['filters']['field_topic_tid']['table'] = 'field_data_field_topic';
-  $handler->display->display_options['filters']['field_topic_tid']['field'] = 'field_topic_tid';
-  $handler->display->display_options['filters']['field_topic_tid']['value'] = array(
-    24 => '24',
-  );
-  $handler->display->display_options['filters']['field_topic_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_topic_tid']['vocabulary'] = 'topic';
-  $handler->display->display_options['filters']['field_topic_tid']['hierarchy'] = 1;
 
   /* Display: Charts Page */
   $handler = $view->new_display('page', 'Charts Page', 'page_4');
@@ -514,7 +427,7 @@ function elections_module_views_default_views() {
   $handler->display->display_options['fields']['field_topic']['field'] = 'field_topic';
   $handler->display->display_options['fields']['field_topic']['element_type'] = 'span';
   $handler->display->display_options['fields']['field_topic']['element_label_type'] = 'strong';
-  $handler->display->display_options['fields']['field_topic']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_topic']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_topic']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_topic']['multi_type'] = 'ul';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
@@ -538,17 +451,25 @@ function elections_module_views_default_views() {
   $handler->display->display_options['filters']['field_type_tid']['table'] = 'field_data_field_type';
   $handler->display->display_options['filters']['field_type_tid']['field'] = 'field_type_tid';
   $handler->display->display_options['filters']['field_type_tid']['value'] = array(
-    10 => '10',
+    13 => '13',
   );
   $handler->display->display_options['filters']['field_type_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_type_tid']['vocabulary'] = 'data_type';
   $handler->display->display_options['filters']['field_type_tid']['hierarchy'] = 1;
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
   $handler->display->display_options['path'] = 'charts';
 
   /* Display: Maps Page */
   $handler = $view->new_display('page', 'Maps Page', 'page_5');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Maps';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -572,7 +493,7 @@ function elections_module_views_default_views() {
   $handler->display->display_options['fields']['field_topic']['field'] = 'field_topic';
   $handler->display->display_options['fields']['field_topic']['element_type'] = 'span';
   $handler->display->display_options['fields']['field_topic']['element_label_type'] = 'strong';
-  $handler->display->display_options['fields']['field_topic']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_topic']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_topic']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_topic']['multi_type'] = 'ul';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
@@ -596,11 +517,18 @@ function elections_module_views_default_views() {
   $handler->display->display_options['filters']['field_type_tid']['table'] = 'field_data_field_type';
   $handler->display->display_options['filters']['field_type_tid']['field'] = 'field_type_tid';
   $handler->display->display_options['filters']['field_type_tid']['value'] = array(
-    11 => '11',
+    14 => '14',
   );
   $handler->display->display_options['filters']['field_type_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_type_tid']['vocabulary'] = 'data_type';
   $handler->display->display_options['filters']['field_type_tid']['hierarchy'] = 1;
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
   $handler->display->display_options['path'] = 'maps';
 
   /* Display: Infographics Page */
@@ -637,7 +565,7 @@ function elections_module_views_default_views() {
   $handler->display->display_options['fields']['field_topic']['field'] = 'field_topic';
   $handler->display->display_options['fields']['field_topic']['element_type'] = 'span';
   $handler->display->display_options['fields']['field_topic']['element_label_type'] = 'strong';
-  $handler->display->display_options['fields']['field_topic']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_topic']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_topic']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_topic']['multi_type'] = 'ul';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
@@ -661,11 +589,18 @@ function elections_module_views_default_views() {
   $handler->display->display_options['filters']['field_type_tid']['table'] = 'field_data_field_type';
   $handler->display->display_options['filters']['field_type_tid']['field'] = 'field_type_tid';
   $handler->display->display_options['filters']['field_type_tid']['value'] = array(
-    12 => '12',
+    15 => '15',
   );
   $handler->display->display_options['filters']['field_type_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_type_tid']['vocabulary'] = 'data_type';
   $handler->display->display_options['filters']['field_type_tid']['hierarchy'] = 1;
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
   $handler->display->display_options['path'] = 'infographics';
   $export['questions'] = $view;
 
